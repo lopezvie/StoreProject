@@ -1,0 +1,33 @@
+<?php
+/*
+ * Author: Omar Lopez Vie 
+ *  */
+session_start();
+    $_SESSION['id_user'] = $_POST['submit'];
+?>
+<html>
+    <head>
+        <title>Create A New Product - Administrator</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <link rel="stylesheet" href="css/styleRegisterPage.css">
+    </head>
+    <body>
+        <div>
+            <form action="insertProduct.php" method="post" enctype="multipart/form-data">
+                <b style="text-align: center; font-size: 25px;">Create A New Product</b><br><br>
+                <label for="uid">PRODUCT NAME: </label><br>
+                <input type="text" name="name" placeholder="Product Name"/><br><br>
+                <label for="pwd">DESCRIPTION:</label><br>
+                <input type="text" name="desc" placeholder="Description"/><br><br>
+                <label for="name">PRICE:</label><br>
+                <input type="text" name="price" placeholder="Price"/><br><br>
+                <label for="email">IMAGE FILE:</label><br>
+                <input type="file" name="fileToUpload" placeholder="Image File"/><br><br>
+                <button id="btn" type="submit" name="submit">CREATE</button><br>
+            </form>        
+            <button id="btn" style="display:inline;" onclick="window.location.href = 'admin.php'">GO BACK</button>
+        </div>
+    </body>
+</html>
